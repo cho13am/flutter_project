@@ -25,14 +25,14 @@ class _BookDetailPageState extends State<BookDetailPage> {
 
   Future<void> _fetchBookDetail() async {
     final response = await http.get(
-      Uri.parse('https://learning-flutter.vercel.app/books/${widget.id}'));
+      Uri.parse('https://book-api-final.vercel.app/books/${widget.id}'));
     setState(() {
       _bookDetail = json.decode(response.body);
     });
   }
 
   Future<void> _deleteBook() async {
-    final url = Uri.parse('https://learning-flutter.vercel.app/books');
+    final url = Uri.parse('https://book-api-final.vercel.app/books');
     final headers = {'Content-Type': 'application/json'};
     final body = jsonEncode({'id': widget.id});
 

@@ -32,7 +32,7 @@ class _UpdateBookPageState extends State<UpdateBookPage> {
   }
 
   Future<void> _fetchBooks() async {
-    final url = Uri.parse('https://learning-flutter.vercel.app/books/${widget.id}');
+    final url = Uri.parse('https://book-api-final.vercel.app/books/${widget.id}');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -60,7 +60,7 @@ class _UpdateBookPageState extends State<UpdateBookPage> {
   }
 
   Future<void> _update() async {
-  final url = Uri.parse('https://learning-flutter.vercel.app/books/');
+  final url = Uri.parse('https://book-api-final.vercel.app/books/');
   
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
